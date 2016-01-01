@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta name="generator" content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen">
+        <script type="text/javascript" src="js/bootstrap.min.js">
+</script>
+        <title>
+            Item Management
+        </title>
+        <script>
+
+        var button_beg = '<button id="button" onclick="showhide()">', 
+        button_end = '<button>';
+        var show_button = 'Show', hide_button = 'Hide';
+        function showhide() {
+        var div = document.getElementById( "hide_show" );
+        var showhide = document.getElementById( "showhide" );
+        if ( div.style.display !== "none" ) {
+            div.style.display = "none";
+            button = show_button;
+            showhide.innerHTML = button_beg + button + button_end;
+        } else {
+            div.style.display = "block";
+            button = hide_button;
+            showhide.innerHTML = button_beg + button + button_end;
+        }
+        }
+        function setup_button( status ) {
+        if ( status == 'show' ) {
+            button = hide_button;
+        } else {
+            button = show_button;
+        }
+        var showhide = document.getElementById( "showhide" );
+        showhide.innerHTML = button_beg + button + button_end;
+        }
+        window.onload = function () {
+        setup_button( 'hide' );
+        showhide(); // if setup_button is set to 'show' comment this line
+        }
+        </script>
+        <style type="text/css">
+body{
+            background-color: lightblue;
+        }
+
+        </style>
+    </head>
+    <body>
+        <div id="showhide"></div>
+        <div id="hide_show">
+            <p>
+                This div will be show and hide on button click
+            </p><br>
+            <hr>
+            <!-- FOR ITEM-MANAGEMENT MENU! -->
+            <h3 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Select-your-action</h3>
+            <form class="form-horizontal" role="form" action="check_form.jsp" method="post">
+                <div class="form-group">
+                    <div class="col-sm-8">
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                        <input type="radio" name="item" value="add_item"> Add Item
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-8">
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      
+                        <input type="radio" name="item" value="del_item"> Delete Item
+                    </div>
+                </div>
+                <div class="form-group">
+                    &nbsp;&nbsp;&nbsp; 
+                    <a href="index.html" class="btn btn-info" role="button" active="">Previous</a> &nbsp;&nbsp;&nbsp; 
+                    <button type="submit" class="btn btn-danger btn-lg" name="submit" active="">Submit!</button>
+                    <div class="col-sm-1 col-xs-1 col-md-2 col-lg-1"></div>
+                    &nbsp;&nbsp;&nbsp; 
+                    <button type="button" class="btn btn-primary" active="">Home</button>
+                </div>
+            </form>
+
+        </div>
+    </body>
+</html>
