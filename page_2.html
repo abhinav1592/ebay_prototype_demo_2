@@ -6,7 +6,30 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen">
         <script type="text/javascript" src="js/bootstrap.min.js">
-</script>
+        </script>
+
+        <script type="text/javascript" src="js/jquery-1.11.3.js">
+        </script>
+          <script language="text/javascript"> 
+        function menu() { 
+        // $item_val = document.getElementById("radio_value");
+         //if(document.getElementById("radio_value").value=="add_item"){
+          /* if(item_val=="add_item"){
+          console.log("here!");*/
+
+          $("#add_item1").load("page_2_add_item.html"); 
+         
+       }
+     
+              /*else{
+          console.log("here2");
+             $(function(){
+          $("#del_item1").load("page_2_del_item.html"); 
+         }
+       }*/
+          } 
+</script> 
+
         <title>
             Item Management
         </title>
@@ -42,8 +65,18 @@
         showhide(); // if setup_button is set to 'show' comment this line
         }
         </script>
+       <!-- <script>
+        $(function(){
+        $("#del_item1").load("page_2_del_item.html"); 
+        });
+        </script>
+        <script>
+$(function(){
+        $("#add_item1").load("page_2_add_item.html"); 
+        });
+        </script>-->
         <style type="text/css">
-body{
+        body{
             background-color: lightblue;
         }
 
@@ -53,38 +86,37 @@ body{
         <div id="showhide"></div>
         <div id="hide_show">
             <p>
-                This div will be show and hide on button click
+                This div will be shown and hidden on button click
             </p><br>
             <hr>
             <!-- FOR ITEM-MANAGEMENT MENU! -->
-            <h3 >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Select-your-action</h3>
-            <form class="form-horizontal" role="form" action="check_form.jsp" method="post">
+            <h3>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Select-your-action
+            </h3>
+            <form class="form-horizontal" role="form" method="post">
                 <div class="form-group">
                     <div class="col-sm-8">
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-                        <input type="radio" name="item" value="add_item"> Add Item
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="item" id= "radio_value" value="add_item"> Add Item
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-8">
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      
-                        <input type="radio" name="item" value="del_item"> Delete Item
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="item"  id= "radio_value"  value="del_item"> Delete Item
                     </div>
                 </div>
                 <div class="form-group">
-                    &nbsp;&nbsp;&nbsp; 
-                    <a href="index.html" class="btn btn-info" role="button" active="">Previous</a> &nbsp;&nbsp;&nbsp; 
-                    <button type="submit" class="btn btn-danger btn-lg" name="submit" active="">Submit!</button>
-                    <div class="col-sm-1 col-xs-1 col-md-2 col-lg-1"></div>
-                    &nbsp;&nbsp;&nbsp; 
-                    <button type="button" class="btn btn-primary" active="">Home</button>
+                    &nbsp;&nbsp;&nbsp; <a href="index.html" class="btn btn-info" role="button" active>Previous</a> &nbsp;&nbsp;&nbsp;
+                     <button type="submit" class="btn btn-danger btn-lg" id="submit_button" name="submit" onclick=menu() >
+                      Submit!</button>
+                    <div class="col-sm-1 col-xs-1 col-md-2 col-lg-1"></div>&nbsp;&nbsp;&nbsp; <button type="button" class="btn btn-primary" active>Home</button>
                 </div>
             </form>
-
         </div>
+          <!-- Using jquery we get page_2_del_item content -->
+          <div id="del_item1"></div><!-- Using jquery we get page_2_add_item content -->
+            <div id="add_item1"></div>
     </body>
 </html>
+
+
+<!--onclick=menu(this.form.submit_button.submit.value) -->
